@@ -1,0 +1,48 @@
+
+h1{text-align: center;
+    text-transform: capitalize;
+    color: #6911db;
+    background-color: #dda11e;
+    border: 10px solid #38a1af;
+    border-radius: 30px;
+    border-left-color:burlywood ;
+    border-right-color:burlywood ;
+   
+}
+   form{
+text-align: center;
+background-color: #f5f7f3b4;
+border-radius: 30px;
+margin: 50px;
+
+}
+
+   
+   input{
+    background-color: rgb(135, 231, 159);
+    text-align: center;
+    border-radius: 30px;
+    
+   }
+   
+fieldset{
+    border-radius: 30px;
+}
+.label{
+    text-align: center;
+    
+}
+    div{
+        text-align: center;
+         }
+         .label 2{
+             text-align: center;
+         }
+         h3{
+             text-align: center;
+             color: #6911db;
+         }
+         img src{
+                image-orientation: initial;
+         }
+    
