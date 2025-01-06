@@ -1,4 +1,34 @@
-# Git Integration & Wix CLI <img align="left" src="https://user-images.githubusercontent.com/89579857/185785022-cab37bf5-26be-4f11-85f0-1fac63c07d3b.png">
+# Hi there, I'm Chris 👋
+
+Welcome to my GitHub profile! I'm a passionate developer with a love for technology and problem-solving. Here's a little bit about me:
+
+## 🚀 About Me
+- 🌐 I enjoy working on web development and open-source projects.
+- 🌱 Currently learning more about backend development and cloud technologies.
+- 💬 Ask me about JavaScript, Python, and web development.
+- 📫 How to reach me: [manegabechris@example.com](mailto:manegabechris@example.com)
+- ⚡ Fun fact: I love hiking and outdoor adventures.
+
+## 🛠️ Tech Stack
+- **Languages:** JavaScript, Python, HTML, CSS
+- **Frameworks/Libraries:** React, Node.js, Express.js, Django
+- **Databases:** MongoDB, PostgreSQL, SQLite
+- **Tools:** Git, Docker, VS Code, Postman
+
+## 📈 GitHub Stats
+![Chris's GitHub stats](https://github-readme-stats.vercel.app/api?username=manegabechris&show_icons=true&theme=radical)
+
+## 🏆 Top Projects
+- [Project 1](https://github.com/manegabechris/project1): Description of project 1.
+- [Project 2](https://github.com/manegabechris/project2): Description of project 2.
+- [Project 3](https://github.com/manegabechris/project3): Description of project 3.
+
+## 📫 Connect with Me
+- [LinkedIn](https://www.linkedin.com/in/manegabechris/)
+- [Twitter](https://twitter.com/manegabechris)
+
+Thank you for visiting my profile! 
+Feel free to check out my repositories and get in touch if you have any questions or collaboration ideas.# Git Integration & Wix CLI <img align="left" src="https://user-images.githubusercontent.com/89579857/185785022-cab37bf5-26be-4f11-85f0-1fac63c07d3b.png">
 
 This repo is part of Git Integration & Wix CLI, a set of tools that allows you to write, test, and publish code for your Wix site locally on your computer. 
 
