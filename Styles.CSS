@@ -1,29 +1,105 @@
 
-h1{text-align: center;
+body{
+    display: flex;
+    margin: 5px;
+    font-size: medium;
+    font-family:  Arial;
+    font-family:  sans-serif;
+}
+h1{
+    color:  #080808;
+    text-align: center;
     text-transform: capitalize;
-    color: #6911db;
-    background-color: #dda11e;
-    border: 10px solid #38a1af;
+    background-color: #8c8397;
+    border: 5px solid #a4cfd4;
     border-radius: 30px;
-    border-left-color:burlywood ;
-    border-right-color:burlywood ;
+    border-left-color:rgb(247, 243, 8) ;
+    border-right-color:rgb(246, 250, 8) ;
    
 }
    form{
 text-align: center;
-background-color: #f5f7f3b4;
+background-color: #7e9e5fb4;
 border-radius: 30px;
 margin: 50px;
+text-align: center;
+height: 2000px;
+width: 300px;
 
 }
-
-   
-   input{
-    background-color: rgb(135, 231, 159);
-    text-align: center;
-    border-radius: 30px;
-    
+input{
+    background-color: #fbfafc;
+    border-radius: 30px;  
    }
+   img{
+    justify-content: center;
+   }
+fieldset{
+    border-radius: 30px;
+}
+.label{
+    text-align: center;
+    
+}
+    div{
+        
+        text-align: center;
+         }
+         .label {
+             text-align: center;
+         }
+         h3{
+             text-align: center;
+             color: #6911db;
+         }
+         img src{
+                image-orientation: initial;
+         }
+    
+    label{
+        color: blue;
+    }
+    video{
+        background-color: rgb(7, 6, 7);
+        border-radius: 20px;
+    }
+    p{
+        color: rgb(7, 6, 6);
+    }
+    button{
+        color:  #080808;
+             text-align: center;
+                 text-transform: capitalize;
+                     background-color: #8c8397;
+                         border: 5px solid #a4cfd4;
+                     border-radius: 30px;
+                 border-left-color:rgb(247, 243, 8) ;
+              border-right-color:rgb(246, 250, 8) ;    
+          touch-action: manipulation;
+    }
+    h2{
+        color: #7e9e5fb4;
+        text-align: center;
+        
+    }
+    ol{
+        color: #6911db;
+    }
+    ul{
+        color: #080808;   
+    }
+    .accepter{
+        color: #6911db;
+        border-right-color:rgb(239, 243, 6) ;
+        border-left-color:rgb(239, 243, 6) ;
+        text-align: right;
+        background-color: rgb(251, 252, 250);
+        border-radius: 30px;
+        font-size: medium;
+        font-family: Arial
+       
+    
+    }
    
 fieldset{
     border-radius: 30px;
