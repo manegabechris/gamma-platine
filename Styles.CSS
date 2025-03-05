@@ -1,6 +1,6 @@
 
 body{
-    display: flex;
+    
     margin: 5px;
     font-size: medium;
     font-family:  Arial;
@@ -86,8 +86,9 @@ fieldset{
         color: #6911db;
     }
     ul{
-        color: #080808;   
+        color: #030303;
     }
+    
     .accepter{
         color: #6911db;
         border-right-color:rgb(239, 243, 6) ;
@@ -96,5 +97,6 @@ fieldset{
         background-color: rgb(251, 252, 250);
         border-radius: 30px;
         font-size: medium;
-        font-family: Arial    
+        font-family: Arial
     }
+   
