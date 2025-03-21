@@ -1,27 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Styles.CSS">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Groupe Chat</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9fafc;
+      color: #2c3e50;
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: #34495e;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #3498db;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px 10px 20px 0;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+      transform: scale(1.05);
+    }
+
+    h2 {
+      color: #2c3e50;
+      margin-top: 0;
+    }
+
+    ol {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background-color: #ecf0f1;
+      color: #7f8c8d;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <button>notre groups chat</button> <a href="chat.html"> <button>commence vos coversation</button></a>
-    <br>
-            <p>Dans un groupe de chats, la répartition se fait généralement de manière informelle et souple, selon plusieurs facteurs comme la disponibilité des ressources (nourriture, abris) et les liens de parenté entre individus. Voici les points clés :</p>
-        <ol>
-                <li>
-                     <strong>Noyau social matriarcal</strong></li><p>Dans les colonies ou chatteries, on retrouve souvent un noyau composé de femelles apparentées (mères et leurs descendantes) qui partagent les soins aux chatons et les interactions quotidiennes.</p> 
-                        <li>
-                              <strong>Position des mâles</strong></li><p>Les mâles, surtout non castrés, tendent à rester en périphérie du groupe. Ils interviennent principalement lors des périodes de reproduction et peuvent avoir des territoires plus étendus que ceux des femelles.</p>
-                    <li> 
-                        <strong>Hiérarchie et comportements</strong></li><p>Bien que les chats soient souvent perçus comme des animaux solitaires, dans un groupe ils adoptent une forme de hiérarchie souple. Ce n’est pas une domination stricte, mais plutôt une répartition basée sur l’expérience, l’assertivité et la capacité à marquer leur territoire (via des postures, des frottements ou des marquages olfactifs) afin d’éviter les conflits.</p>
-    <li>
-                                 <strong>Flexibilité en fonction de l’environnement</strong></li><p>La structure du groupe peut varier avec la disponibilité des ressources et la densité de population. Dans un environnement riche en nourriture et en espace, le groupe est plus stable et les interactions se font avec plus de coopération, tandis qu’en cas de ressource limitée, les comportements défensifs et les conflits peuvent s’exacerber.</p>
-            </ol>
-    
-                    <p>Ainsi, la répartition d’un groupe de chats s’appuie sur une organisation sociale fluide, où le noyau est souvent matriarcal, et où la hiérarchie se manifeste par des comportements subtils visant à limiter les affrontements tout en permettant la cohabitation.</p>
-  
+
+  <header>
+    <h1>Notre Groupe Chat</h1>
+    <p>Discussion, partage et interaction en communauté</p>
+  </header>
+
+  <div class="container">
+    <a class="btn">Notre Groupe Chat</a>
+    <a class="btn" href="chat.html">Commencez vos conversations</a>
+
+    <p>Dans un groupe de chats, la répartition se fait généralement de manière informelle et souple, selon plusieurs facteurs comme la disponibilité des ressources (nourriture, abris) et les liens de parenté entre individus. Voici les points clés :</p>
+
+    <ol>
+      <li>Noyau social matriarcal</li>
+      <p>Dans les colonies ou chatteries, on retrouve souvent un noyau composé de femelles apparentées (mères et leurs descendantes) qui partagent les soins aux chatons et les interactions quotidiennes.</p>
+
+      <li>Position des mâles</li>
+      <p>Les mâles, surtout non castrés, tendent à rester en périphérie du groupe. Ils interviennent principalement lors des périodes de reproduction et peuvent avoir des territoires plus étendus que ceux des femelles.</p>
+
+      <li>Hiérarchie et comportements</li>
+      <p>Bien que les chats soient souvent perçus comme des animaux solitaires, dans un groupe ils adoptent une forme de hiérarchie souple. Ce n’est pas une domination stricte, mais plutôt une répartition basée sur l’expérience, l’assertivité et la capacité à marquer leur territoire (via des postures, des frottements ou des marquages olfactifs) afin d’éviter les conflits.</p>
+
+      <li>Flexibilité en fonction de l’environnement</li>
+      <p>La structure du groupe peut varier avec la disponibilité des ressources et la densité de population. Dans un environnement riche en nourriture et en espace, le groupe est plus stable et les interactions se font avec plus de coopération. En revanche, en cas de ressource limitée, les comportements défensifs et les conflits peuvent s’exacerber.</p>
+    </ol>
+
+    <p>👉 Ainsi, la répartition d’un groupe de chats s’appuie sur une organisation sociale fluide, où le noyau est souvent matriarcal, et où la hiérarchie se manifeste par des comportements subtils visant à limiter les affrontements tout en permettant la cohabitation.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 Gamma Platine. Tous droits réservés.
+  </footer>
+
 </body>
 </html>
