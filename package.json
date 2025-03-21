@@ -1,13 +1,21 @@
 {
-  "devDependencies": {
-    "@wix/cli": "^1.0.0",
-    "@wix/eslint-plugin-cli": "^1.0.0",
-    "eslint": "^8.25.0",
-    "react": "16.14.0"
-  },
+  "name": "gamma-platine",
+  "version": "1.0.0",
+  "description": "💬 Gamma Platine — Application de chat en temps réel avec Firebase, salons, fichiers, avatars et modération",
+  "author": "TonNom ou Équipe Gamma Platine",
+  "license": "MIT",
   "scripts": {
     "postinstall": "wix sync-types",
     "dev": "wix dev",
     "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@wix/cli": "^1.0.0",
+    "@wix/eslint-plugin-cli": "^1.0.0",
+    "eslint": "^8.25.0",
+    "react": "^16.14.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
