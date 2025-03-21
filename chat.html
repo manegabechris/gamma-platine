@@ -1,12 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Styles.CSS">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Gamma Platine</title>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage-compat.js"></script>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f5f7fa; margin: 0; }
+    header { background: #4c8bf5; color: white; padding: 20px; text-align: center; }
+    .container { max-width: 800px; margin: auto; padding: 20px; }
+    .login-box, .chat-box, .room-select, .file-upload { margin-bottom: 20px; }
+    .chat-messages { height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background: white; }
+    .message { margin-bottom: 10px; }
+    .reactions span { margin-right: 5px; cursor: pointer; }
+  </style>
 </head>
 <body>
-    <h3>bienvenue</h3>
+
+<header>
+  <h2>🎉 Groupe Chat Gamma Platine</h2>
+  <p>🔥 Authentification, salons, fichiers, réactions & modération</p>
+</header>
+
+<div class="container">
+  <div class="login-box" id="loginBox">
+    <h3>Connexion</h3>
+    <button onclick="loginGoogle()">Connexion avec Google</button>
+    <button onclick="loginGitHub()">Connexion avec GitHub</button>
+  </div>
+
+  <div id="chatArea" style="display:none;">
+    <div class="room-select">
+      <label for="roomSelect"><strong>💬 Salon :</strong></label>
+      <select id="roomSelect" onchange="loadMessages()"></select>
+      <input type="text" id="newRoomName" placeholder="Créer un salon..." />
+      <button onclick="createRoom()">➕</button>
+    </div>
+
+    <div class="chat-box">
+      <div class="chat-messages" id="messagesBox"></div>
+      <textarea id="messageInput" placeholder="Écrivez un message..."></textarea>
+      <button onclick="sendMessage()">Envoyer</button>
+    </div>
+
+    <div class="file-upload">
+      <input type="file" id="fileInput" />
+      <button onclick="uploadFile()">📎 Envoyer fichier</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // 🔥 Config Firebase
+  const firebaseConfig = {
+    apiKey: "VOTRE_API_KEY",
+    authDomain: "VOTRE_AUTH_DOMAIN",
+    projectId: "VOTRE_PROJECT_ID",
+    storageBucket: "VOTRE_STORAGE_BUCKET",
+    messagingSenderId: "VOTRE_MESSAGING_SENDER_ID",
+    appId: "VOTRE_APP_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  const storage = firebase.storage();
+
+  let currentUser = null;
+  let currentRoom = null;
+
+  const bannedWords = ['insulte', 'mauvaismot', 'spam'];
+
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      currentUser = user;
+      document.getElementById('loginBox').style.display = 'none';
+      document.getElementById('chatArea').style.display = 'block';
+      loadRooms();
+    }
+  });
+
+  function loginGoogle() {
+    auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
+  function loginGitHub() {
+    auth.signInWithPopup(new firebase.auth.GithubAuthProvider());
+  }
+
+  function createRoom() {
+    const roomName = document.getElementById('newRoomName').value.trim();
+    if (roomName) {
+      db.collection('rooms').add({ name: roomName }).then(loadRooms);
+      document.getElementById('newRoomName').value = '';
+    }
+  }
+
+  function loadRooms() {
+    const select = document.getElementById('roomSelect');
+    select.innerHTML = '';
+    db.collection('rooms').get().then(snapshot => {
+      snapshot.forEach(doc => {
+        const opt = document.createElement('option');
+        opt.value = doc.id;
+        opt.textContent = doc.data().name;
+        select.appendChild(opt);
+      });
+      if (snapshot.docs.length > 0) {
+        currentRoom = snapshot.docs[0].id;
+        loadMessages();
+      }
+    });
+  }
+
+  function loadMessages() {
+    currentRoom = document.getElementById('roomSelect').value;
+    db.collection('rooms').doc(currentRoom).collection('messages')
+      .orderBy('timestamp')
+      .onSnapshot(snapshot => {
+        const box = document.getElementById('messagesBox');
+        box.innerHTML = '';
+        snapshot.forEach(doc => {
+          const msg = doc.data();
+          const div = document.createElement('div');
+          div.classList.add('message');
+          div.innerHTML = `<strong>${msg.user}:</strong> ${msg.text} 
+            <div class="reactions">
+              <span onclick="addReaction('${doc.id}','❤️')">❤️</span>
+              <span onclick="addReaction('${doc.id}','👍')">👍</span>
+              <span onclick="addReaction('${doc.id}','😂')">😂</span>
+            </div>`;
+          box.appendChild(div);
+        });
+        box.scrollTop = box.scrollHeight;
+      });
+  }
+
+  function sendMessage() {
+    let text = document.getElementById('messageInput').value.trim();
+    if (text) {
+      const filtered = bannedWords.some(word => text.includes(word));
+      if (filtered) {
+        alert("Message non autorisé (modération automatique)");
+        return;
+      }
+      db.collection('rooms').doc(currentRoom).collection('messages').add({
+        user: currentUser.displayName,
+        text: text,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      document.getElementById('messageInput').value = '';
+    }
+  }
+
+  function addReaction(messageId, emoji) {
+    const reactionRef = db.collection('rooms').doc(currentRoom)
+      .collection('messages').doc(messageId).collection('reactions').doc(emoji);
+    reactionRef.get().then(doc => {
+      if (doc.exists) {
+        reactionRef.update({ count: firebase.firestore.FieldValue.increment(1) });
+      } else {
+        reactionRef.set({ count: 1 });
+      }
+    });
+  }
+
+  function uploadFile() {
+    const file = document.getElementById('fileInput').files[0];
+    if (!file) return;
+    const storageRef = storage.ref().child(`uploads/${Date.now()}-${file.name}`);
+    storageRef.put(file).then(snapshot => {
+      snapshot.ref.getDownloadURL().then(url => {
+        db.collection('rooms').doc(currentRoom).collection('messages').add({
+          user: currentUser.displayName,
+          text: `📎 Fichier partagé : <a href="${url}" target="_blank">${file.name}</a>`,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+      });
+    });
+  }
+</script>
+
 </body>
 </html>
