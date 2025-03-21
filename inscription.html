@@ -1,65 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Styles.CSS">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaire d'inscription</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 25px 35px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    h4 {
+      text-align: center;
+      color: #555;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      margin-top: 10px;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      font-weight: normal;
+      margin-right: 15px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background-color: #3498db;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .submit-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .footer-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .footer-link a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .footer-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <h3>Formulaire d'inscription</h3>  
-    <h4>veuillez remplir les champs ci-dessous</h4>
-    <div>
-<fieldset>
-<label for="nom">nom complet</label><br>
- <input type="text" id="name" name="nom" placeholder="nom"required> 
- <br>
-       <label for="mobil">N° telphone</label><br>
- <input type="text" id="mobil"placeholder="tel" required>
- <br>
-         <label for="email">email</label><br>
- <input type="text" id="email"placeholder="mail" required> 
-  <br>
-         <label for="password">mot de passe</label><demo-texte></demo-texte><br>
-<input type="password" name="password" id="password"placeholder="password" required>
-</fieldset>
-<br>
-<fieldset><label for="">sexe</label><br>
-  <input type="radio" name="sexe" id="">masculin 
-      <input type="radio" name="sexe" id="">féminin
-        </fieldset>
-        <br>
-<fieldset><label>langue parler</label>   <br>
-<label for="langue-francais"><input type="checkbox" name="langue" value="francais" id="langue-francais">francais</label>
-    
-     <label for="langue-anglais"><input type="checkbox" name="langue" value="anglais" id="langue-francais">anglais</label>
 
-         <label for="langue-espagnol"><input type="checkbox" name="langue" value="espagnol" id="langue-espagnol">espagnol</label>
-             
-             <label for="langue-italien"><input type="checkbox" name="langue" value="italien" id="langue-italien">italien</label>
-             
-                  <label for="langue-portugue"><input type="checkbox" name="langue" value="portugue" id="langue-francais">portugue</label>
-                </fieldset>
-<br>
-<fieldset> <label for="country">pays de résidencielle</label>
-<select name="alphabet" id="country">
-<option value="">ici</option>
-<option value="RDC">RDC</option>
-    <option value="RWANDA">RWANDA</option>
-        <option value="BURUNDI">BURUNDI</option>
-            <option value="TANZANIE">TANZANIE</option>
-                <option value="KENYA">KENYA</option>
-           </div>    
-</select>
-</fieldset>
-<a href="option.html"><input type="submit" value="valider"></a>
-<br>        
-<p>inscrit ou conectez-vous avec <a href="https://accounts.google.com">google</a></p>
+  <div class="container">
+    <h3>Formulaire d'inscription</h3>
+    <h4>Veuillez remplir les champs ci-dessous</h4>
 
+    <form action="option.html" method="post">
 
-           
-</fieldset>
-<br>
+      <fieldset>
+        <label for="name">Nom complet</label>
+        <input type="text" id="name" name="nom" placeholder="Votre nom complet" required>
+
+        <label for="mobile">N° téléphone</label>
+        <input type="text" id="mobile" name="mobile" placeholder="Votre numéro" required>
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Votre adresse email" required>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" name="password" id="password" placeholder="Mot de passe" required>
+      </fieldset>
+
+      <fieldset>
+        <label>Sexe</label>
+        <div class="radio-group">
+          <label><input type="radio" name="sexe" value="masculin"> Masculin</label>
+          <label><input type="radio" name="sexe" value="féminin"> Féminin</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <label>Langues parlées</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="langue" value="français"> Français</label>
+          <label><input type="checkbox" name="langue" value="anglais"> Anglais</label>
+          <label><input type="checkbox" name="langue" value="espagnol"> Espagnol</label>
+          <label><input type="checkbox" name="langue" value="italien"> Italien</label>
+          <label><input type="checkbox" name="langue" value="portugais"> Portugais</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <label for="country">Pays de résidence</label>
+        <select name="country" id="country">
+          <option value="">-- Sélectionnez un pays --</option>
+          <option value="RDC">RDC</option>
+          <option value="RWANDA">Rwanda</option>
+          <option value="BURUNDI">Burundi</option>
+          <option value="TANZANIE">Tanzanie</option>
+          <option value="KENYA">Kenya</option>
+        </select>
+      </fieldset>
+
+      <input type="submit" value="Valider" class="submit-btn">
+    </form>
+
+    <div class="footer-link">
+        <button onclick="loginGoogle()">Connexion avec Google</button>
+        <button onclick="loginGitHub()">Connexion avec GitHub</button> 
+    </div>
+  </div>
 
 </body>
 </html>
