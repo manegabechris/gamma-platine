@@ -1,18 +1,161 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="Styles.CSS">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenue sur Gamma Platine</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #2c3e50;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: center;
+    }
+
+    .container h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn-group a {
+      text-decoration: none;
+    }
+
+    .btn-group button {
+      background-color: #3498db;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-group button:hover {
+      background-color: #2980b9;
+      transform: scale(1.05);
+    }
+
+    /* Style pour la barre de recherche */
+    .search-container {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #search-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .search-results {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-top: none;
+      border-radius: 0 0 4px 4px;
+    }
+
+    .search-results li {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .search-results li:hover {
+      background-color: #f0f0f0;
+    }
+
+  </style>
 </head>
 <body>
-    <nav>mercie pour votre angagement dans Gamma-platine.,l'innovation et outils de dévélopement a votre disposition</nav>  
-  <br>
-   <a href="transformation digital.html"> <button>transformation digital</button></a>
-      <a href="developement web.html">  <button>développement web</button></a>
-          <a href="marketing digital.html"><button> marketing digital</button></a>
-               <a href="groupe chat.html"><button>notre groups chat</button></a>
-               
+
+  <nav>
+    Merci pour votre engagement dans <strong>Gamma Platine</strong>. <br>
+    L'innovation et les outils de développement sont à votre disposition.
+  </nav>
+
+  <div class="container">
+    <h2>Explorez nos domaines de formation</h2>
+
+    <!-- Barre de recherche -->
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Rechercher un domaine..." onkeyup="searchFunction()">
+      <ul class="search-results" id="search-results"></ul>
+    </div>
+
+    <div class="btn-group">
+      <a href="transformation digital.html"><button>Transformation Digitale</button></a>
+      <a href="developement web.html"><button>Développement Web</button></a>
+      <a href="marketing digital.html"><button>Marketing Digital</button></a>
+      <a href="groupe chat.html"><button>Notre Groupe Chat</button></a>
+    </div>
+  </div>
+
+  <script>
+    // Liste des domaines de formation
+    const domains = [
+      "Transformation Digitale",
+      "Développement Web",
+      "Marketing Digital",
+      "Notre Groupe Chat"
+    ];
+
+    // Fonction de recherche
+    function searchFunction() {
+      const input = document.getElementById('search-input').value.toLowerCase();
+      const resultsContainer = document.getElementById('search-results');
+      const results = domains.filter(domain => domain.toLowerCase().includes(input));
+
+      // Effacer les résultats précédents
+      resultsContainer.innerHTML = '';
+
+      if (input) {
+        results.forEach(domain => {
+          const li = document.createElement('li');
+          li.textContent = domain;
+          li.onclick = () => {
+            window.location.href = domain.toLowerCase().replace(' ', '') + '.html';
+          };
+          resultsContainer.appendChild(li);
+        });
+      }
+    }
+  </script>
+
 </body>
 </html>
