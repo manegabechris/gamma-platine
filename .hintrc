@@ -10,5 +10,14 @@
       }
     ],
     "axe/structure": "off"
+  },
+  "rules": {
+    "axe/forms": [
+      "warn",
+      {
+        "label": "on"
+      }
+    ],
+    "axe/structure": "warn"
   }
 }
