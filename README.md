@@ -1,6 +1,6 @@
-# 🎉 Gamma Platine - Application de Chat Moderne avec Firebase
+# 🎉 Gamma Platine - Application qui propose des cours sur la transformation digital, le développement web, le marketing digital et bien plus encore comme Chat Moderne avec Firebase
 
-**Gamma Platine** est une application de messagerie web en temps réel construite avec **Firebase** (Auth, Firestore, Storage). Elle propose une expérience de chat complète, moderne et enrichie :
+**Gamma Platine** est une plateforme de formation en ligne qui propose des cours sur la transformation digital, le développement web, le marketing digital et bien plus encore comme application de messagerie web en temps réel construite avec **Firebase** (Auth, Firestore, Storage). Elle propose une expérience de chat complète, moderne et enrichie :
 
 ## 🚀 Fonctionnalités principales
 
