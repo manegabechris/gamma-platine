@@ -37,7 +37,7 @@
 Comment commencer ?
 
 Cloner le dépôt :
-git clone https://github.com/sofiatechnology/website-templates.git
+git clone https://github.com/...
 
 Installer les dépendances :
 npm install
