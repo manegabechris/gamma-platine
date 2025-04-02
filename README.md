@@ -34,3 +34,10 @@
 ---
 
 ## 📂 Structure du projet
+Comment commencer ?
+Cloner le dépôt :
+git clone https://github.com/sofiatechnology/website-templates.git
+Installer les dépendances :
+npm install
+Démarrer le serveur de développement :
+npm run dev
