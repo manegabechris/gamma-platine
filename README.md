@@ -34,13 +34,50 @@
 ---
 
 ## 📂 Structure du projet
-Comment commencer ?
+✅ Étape 1 : Résoudre l'issue en local
+Clone le dépôt (si ce n'est pas déjà fait)
 
-Cloner le dépôt :
-git clone https://github.com/...
+bash
+Copier
+Modifier
+git clone https://github.com/nom-utilisateur/nom-depot.git
+cd nom-depot
+Créer une branche dédiée à l'issue (en général, nommée avec le numéro de l'issue pour plus de clarté)
 
-Installer les dépendances :
-npm install
+bash
+Copier
+Modifier
+git checkout -b issue-#123
+Faire les modifications nécessaires dans le code pour résoudre l'issue.
 
-Démarrer le serveur de développement :
-npm run dev
+Ajouter les fichiers modifiés à l'index Git :
+
+bash
+Copier
+Modifier
+git add .
+Faire un commit en mentionnant l'issue dans le message (important si tu veux que GitHub ferme automatiquement l'issue une fois fusionnée).
+
+bash
+Copier
+Modifier
+git commit -m "Fix #123 : Description du correctif"
+Le mot-clé Fix #123 (ou Closes #123, Resolves #123) permet de fermer automatiquement l'issue sur GitHub lorsque cette branche est fusionnée dans la branche principale (ex. : main ou master).
+
+✅ Étape 2 : Pousser les modifications sur GitHub
+Pousser la branche sur GitHub :
+
+bash
+Copier
+Modifier
+git push origin issue-#123
+✅ Étape 3 : Créer une Pull Request (PR) sur GitHub
+Sur la page du dépôt sur GitHub, tu verras une suggestion pour créer une Pull Request (PR) depuis ta branche.
+
+Créer la PR en expliquant les changements apportés et en mentionnant l'issue (Fixes #123).
+
+Revue de code & fusion : Après validation, fusionner la PR dans la branche principale (main).
+
+✅ Étape 4 : Fermer l'issue (si non fermée automatiquement)
+Si tu n'as pas utilisé les mots-clés de fermeture (Fix, Close, Resolve), tu peux fermer l'issue manuellement sur GitHub après la fusion.
+
