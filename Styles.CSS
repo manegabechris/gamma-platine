@@ -1,1 +1,35 @@
-
+.app {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-color: #f8f9fa;
+  }
+  .logo {
+    font-size: 48px;
+    font-weight: bold;
+  }
+  .color-0 { color: #4285F4; }
+  .color-1 { color: #8c8397; }
+  .color-2 { color: #F4B400; }
+  .color-3 { color: #053b21; }
+  .color-4 { color: #a4cfd4; }
+  .color-5 { color: #DB4437; }
+  
+  .description {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 30px auto;
+    color: #333;
+  }
+  .cta {
+    margin-top: 30px;
+  }
+  .cta a {
+    text-decoration: none;
+    background-color: #4285F4;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
